@@ -37,3 +37,9 @@ mysql> desc employee_payroll;
 | start  | date         | NO   |     | NULL    |                |
 +--------+--------------+------+-----+---------+----------------+
 4 rows in set (0.04 sec)
+
+****** UC 3 Insert into Employeepayroll ******
+
+mysql> insert into employee_payroll(name,salary,start)values ('Bill',1000000,'2010-10-30'),('Tersia',2000000,'2019-11-13'),('Charlie',300000,'2020-05-21');
+Query OK, 3 rows affected (0.69 sec)
+Records: 3  Duplicates: 0  Warnings: 0
