@@ -213,3 +213,36 @@ mysql> select * from employee_payroll;
 |  3 | Charlie | M      |  300000 | 2020-05-21 |         NULL | NULL       | NULL    |
 +----+---------+--------+---------+------------+--------------+------------+---------+
 3 rows in set (0.06 sec)
+
+
+****** UC 9 Extend table to have Basic Pay,Deduction,Taxable Pay,Income tax,Net Pay ******
+
+mysql> alter table employee_payroll add Basic_pay double;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Deductions double;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Taxable_pay double;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Income_Tax double;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table employee_payroll add Net_pay double;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+| id | name    | gender | salary  | start      | phone_number | Department | Address | Basic_pay | Deductions | Taxable_pay | Income_Tax | Net_pay |
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+|  1 | Bill    | M      | 1000000 | 2010-10-30 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
+|  2 | Tersia  | F      | 2000000 | 2019-11-13 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
+|  3 | Charlie | M      |  300000 | 2020-05-21 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+3 rows in set (0.00 sec)
