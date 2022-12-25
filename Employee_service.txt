@@ -246,3 +246,32 @@ mysql> select * from employee_payroll;
 |  3 | Charlie | M      |  300000 | 2020-05-21 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
 +----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
 3 rows in set (0.00 sec)
+
+******  UC 10 Make terissa as part of sales and marketing department *******
+
+mysql> update employee_payroll set Department ='Sales' where name ='Tersia';
+Query OK, 1 row affected (0.88 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql> select * from employee_payroll;
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+| id | name    | gender | salary  | start      | phone_number | Department | Address | Basic_pay | Deductions | Taxable_pay | Income_Tax | Net_pay |
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+|  1 | Bill    | M      | 1000000 | 2010-10-30 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
+|  2 | Tersia  | F      | 2000000 | 2019-11-13 |         NULL | Sales      | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
+|  3 | Charlie | M      |  300000 | 2020-05-21 |         NULL | NULL       | NULL    |      NULL |       NULL |        NULL |       NULL |    NULL |
++----+---------+--------+---------+------------+--------------+------------+---------+-----------+------------+-------------+------------+---------+
+3 rows in set (0.04 sec)
+
+mysql> insert into employee_payroll(name,gender,Basic_pay,start,Department,Deductions,Taxable_pay,Income_Tax,Net_pay)values('Tersia','F','3000000','2018-01-03','Marketing','1000000','2000000','500000','1500000');
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from employee_payroll;
++----+---------+--------+-----------+------------+--------------+------------+---------+------------+-------------+------------+---------+
+| id | name    | gender | Basic_pay | start      | phone_number | Department | Address | Deductions | Taxable_pay | Income_Tax | Net_pay |
++----+---------+--------+-----------+------------+--------------+------------+---------+------------+-------------+------------+---------+
+|  1 | Bill    | M      |   1000000 | 2010-10-30 |         NULL | NULL       | NULL    |       NULL |        NULL |       NULL |    NULL |
+|  2 | Tersia  | F      |   2000000 | 2019-11-13 |         NULL | Sales      | NULL    |       NULL |        NULL |       NULL |    NULL |
+|  3 | Charlie | M      |    300000 | 2020-05-21 |         NULL | NULL       | NULL    |       NULL |        NULL |       NULL |    NULL |
+|  4 | Tersia  | F      |   3000000 | 2018-01-03 |         NULL | Marketing  | NULL    |    1000000 |     2000000 |     500000 | 1500000 |
++----+---------+--------+-----------+------------+--------------+------------+---------+------------+-------------+------------+---------+
+4 rows in set (0.00 sec)
